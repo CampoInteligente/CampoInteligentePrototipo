@@ -1,50 +1,30 @@
-# Welcome to your Expo app 👋
+# Protótipo do Campo Inteligente
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este repositório contém o protótipo em desenvolvimento do **Campo Inteligente**, um projeto de aplicação móvel que visa transformar a forma como interagimos com a tecnologia no ambiente agrícola. O protótipo está sendo desenvolvido utilizando **React Native** com o **Expo**, e ainda está em fase de implementação, com várias funcionalidades em progresso.
 
-## Get started
+## Funcionalidades Atuais
 
-1. Install dependencies
+- Tela de **Login**: Interface para autenticação do usuário (em progresso).
+- **Home**: Tela temporária de boas-vindas com navegação para outras seções do aplicativo.
+- Navegação por **Abas** (Tabs): Estrutura de navegação entre diferentes seções do aplicativo.
+- **Navegação**: Uso do Expo Router para gerenciar as transições de tela entre login, home e outras abas.
 
+## Tecnologias Utilizadas
+
+- **React Native**: Framework para criação de aplicações móveis nativas.
+- **Expo**: Ferramenta para simplificar o desenvolvimento com React Native.
+- **React Navigation**: Biblioteca para navegação entre telas.
+- **TypeScript**: Linguagem usada para garantir tipagem estática no código.
+
+## Como Rodar o Projeto
+
+1. Clone este repositório.
+2. Certifique-se de ter o **Node.js** e o **Expo CLI** instalados.
+3. Instale as dependências:
    ```bash
    npm install
-   ```
-
-2. Start the app
+4. Rode o app
 
    ```bash
     npx expo start
    ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
