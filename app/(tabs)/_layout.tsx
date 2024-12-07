@@ -1,10 +1,11 @@
+import { Ionicons } from '@expo/vector-icons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 
 export default function TabLayout() {
   return (
     <Tabs screenOptions={{ 
-      tabBarActiveTintColor: '#004809',
+      tabBarActiveTintColor: '#4CAF50',
       tabBarInactiveTintColor: 'white',
       tabBarStyle: {
         backgroundColor: '#127234', // Fundo da barra
@@ -25,7 +26,7 @@ export default function TabLayout() {
         name="simulation"
         options={{
           title: 'Simulações',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
+          tabBarIcon: ({ color }) => <Ionicons size={28} name="bar-chart" color={color} />,
           headerShown: false
         }}
       />
@@ -33,15 +34,15 @@ export default function TabLayout() {
         name="home"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
-          headerShown: false
+          tabBarIcon: ({ color }) => <Ionicons size={28} name="home" color={color} />,
+          headerShown: false,
         }}
       />
       <Tabs.Screen
         name="weather"
         options={{
           title: 'Clima',
-          tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
+          tabBarIcon: ({ color }) => <Ionicons size={28} name="cloud" color={color} />,
           headerShown: false
         }}
       />

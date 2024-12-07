@@ -1,9 +1,10 @@
 // app/tabs/home.tsx
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TextInput, Image, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 import { images } from '../../assets/images';
 import { Ionicons } from '@expo/vector-icons';
 import { Header } from '@/components/Header';
+import { StatusBar } from 'expo-status-bar';
 
 interface Plant {
   id: string;
@@ -28,7 +29,8 @@ export default function HomeScreen() {
   );
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <StatusBar style='dark' />
       <Header />
       <TextInput style={styles.searchInput} placeholder="Pesquisar" />
       <Text style={styles.sectionTitle}>Minhas Plantações</Text>
@@ -40,7 +42,7 @@ export default function HomeScreen() {
         style={styles.listContainer}
         scrollEnabled
       />
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -1,18 +1,23 @@
 import { images } from '@/assets/images';
+import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import React from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
 
 export default function Perfil() {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.backButton}>
-        <Text>←</Text>
+      <TouchableOpacity 
+        style={styles.backButton}
+        onPress={() => router.back()}  
+      >
+        <Ionicons name='chevron-back' size={28} color={'#004809'} />
       </TouchableOpacity>
 
       <Text style={styles.header}>Meu Perfil</Text>
 
       <Image 
-        source={images.agricultor} // Substitua pela URL da imagem ou importe localmente.
+        source={images.agricultorBig} // Substitua pela URL da imagem ou importe localmente.
         style={styles.profileImage}
       />
 
@@ -43,41 +48,49 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#EAF5E9',
     alignItems: 'center',
-    paddingTop: 50,
+    paddingTop: 80,
   },
   backButton: {
     position: 'absolute',
-    top: 20,
+    top: 50,
     left: 20,
+    backgroundColor: 'white',
+    borderRadius: 30,
+    padding: 5
   },
   header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 20,
+    fontSize: 20,
+    fontWeight: '500',
+    color: '#004809',
+    marginBottom: 25,
   },
   profileImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    marginBottom: 20,
+    width: 130,
+    height: 130,
+    borderRadius: 130,
+    marginBottom: 22,
   },
   fieldContainer: {
     width: '90%',
-    backgroundColor: '#FFD966',
     borderRadius: 8,
     padding: 10,
     marginVertical: 5,
     alignItems: 'center',
   },
   label: {
-    fontSize: 16,
-    color: '#333',
+    fontSize: 28,
+    color: '#004809',
+    marginBottom: 8
   },
   value: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
+    fontSize: 20,
+    fontWeight: 'regular',
+    paddingVertical: 10,
+    borderRadius: 12,
+    color: 'white',
+    backgroundColor: '#FFD966',
+    width: '100%',
+    textAlign: 'center'
   },
   changePasswordButton: {
     marginTop: 20,

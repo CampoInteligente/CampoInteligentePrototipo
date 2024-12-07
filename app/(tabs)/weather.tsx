@@ -1,9 +1,11 @@
 // app/tabs/weather.tsx
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Header } from '@/components/Header';
 import { Ionicons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 type IoniconsName =
   | 'sunny'
@@ -36,15 +38,18 @@ export default function WeatherScreen() {
   const renderForecastItem = ({ item }: {item: Weather }) => (
     <View style={styles.forecastItem}>
       <Text style={styles.day}>{item.day}</Text>
-      <Ionicons name={item.icon} size={24} color="#555" />
-      <Text style={styles.temperature}>{item.tempMax}°</Text>
-      <Text style={styles.temperatureMin}>{item.tempMin}°</Text>
+      <View style={{flexDirection: 'row', gap: 10}}>
+        <Ionicons name={item.icon} size={24} color="#555" />
+        <Text style={styles.temperatureMin}>{item.tempMin}°</Text>
+        <Text style={styles.temperature}>{item.tempMax}°</Text>
+      </View>
     </View>
   );
   const router = useRouter();
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <StatusBar style='dark' />
       <Header />
       {/* Weather Overview */}
       <View style={styles.weatherOverview}>
@@ -83,7 +88,7 @@ export default function WeatherScreen() {
           <Text style={styles.footerValue}>81%</Text>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -91,8 +96,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#EAF5E3',
-    padding: 16,
-    paddingTop: 30
+    padding: 20,
   },
   location: {
     fontSize: 14,
@@ -172,6 +176,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
+    marginBottom: 80
   },
   footerBox: {
     flex: 1,

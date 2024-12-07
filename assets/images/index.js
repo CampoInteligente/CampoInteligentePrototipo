@@ -6,5 +6,6 @@ export const images = {
   batata: require('./batata.png'),
   cebola: require('./cebola.png'),
   alface: require('./alface.png'),
-  agricultor: require('./user.jpg')
+  agricultor: require('./user.jpg'),
+  agricultorBig: require('./produtorBig.jpg')
 };
