@@ -23,7 +23,7 @@ export function Header() {
         >
           <Image
             style={styles.profileImage}
-            source={images.agricultor}
+            source={images.agricultorBig}
           />
         </TouchableOpacity>
       </View>
