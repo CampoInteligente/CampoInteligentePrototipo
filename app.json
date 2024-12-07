@@ -2,7 +2,7 @@
   "expo": {
     "name": "campo-inteligente",
     "slug": "campo-inteligente",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -17,10 +17,12 @@
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#004809"
-      }
+      },
+      "package": "com.campointeligente.campointeligente"
     },
     "web": {
       "bundler": "metro",
@@ -41,6 +43,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f65cab83-a53f-4ed6-9062-d9612148dd22"
+      }
     }
   }
 }

@@ -32,6 +32,18 @@ export default function RootLayout() {
 
         <Stack.Screen
           name="perfil"
+          options={{ 
+            headerShown: false 
+          }}
+        />
+
+        <Stack.Screen
+          name="resultado"
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="plant/[plant]"
           options={{ headerShown: false }}
         />
 

@@ -5,6 +5,7 @@ import { images } from '../../assets/images';
 import { Ionicons } from '@expo/vector-icons';
 import { Header } from '@/components/Header';
 import { StatusBar } from 'expo-status-bar';
+import { router } from 'expo-router';
 
 interface Plant {
   id: string;
@@ -22,7 +23,10 @@ const DATA: Plant[] = [
 
 export default function HomeScreen() {
   const renderItem = ({ item }: {item: Plant}) => (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity 
+      style={styles.card}
+      onPress={() => router.push(`../plant/${item.id}`)}
+    >
       <Image source={item.image} style={styles.image} />
       <Text style={styles.text}>{item.name}</Text>
     </TouchableOpacity>

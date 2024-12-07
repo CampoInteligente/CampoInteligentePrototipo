@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { Header } from '@/components/Header';
+import { router } from 'expo-router';
 
 export default function SimulationScreen() {
   const [cultivo, setCultivo] = useState('Milho');
@@ -31,7 +32,7 @@ export default function SimulationScreen() {
             </Picker>
           </View>
 
-          <View>
+          <View style={styles.formRowContainer}>
             <Text style={styles.labelRow}>Área plantada:</Text>
             <TextInput
               style={styles.inputRow}
@@ -90,7 +91,10 @@ export default function SimulationScreen() {
           <Picker.Item label="Não" value="Não" />
         </Picker>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity 
+          style={styles.button}
+          onPress={() => router.push('../resultado')}  
+        >
           <Text style={styles.buttonText}>Simular</Text>
         </TouchableOpacity>
       </View>
@@ -167,7 +171,6 @@ const styles = StyleSheet.create({
     borderColor: '#DDD',
     borderRadius: 5,
     padding: 10,
-    width: '50%' // Espaçamento horizontal entre itens
   },
   picker: {
     backgroundColor: '#FFF',

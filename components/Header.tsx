@@ -3,10 +3,11 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { images } from "../assets/images/index"
 import { router } from "expo-router";
 
-export function Header() {
+export function Header({ leftBar = true }) {
   return (
     <View style={styles.header}>
       {/* Localização */}
+      {leftBar && 
       <View style={styles.locationContainer}>
         <Text style={styles.locationLabel}>Sua localização</Text>
         <View style={styles.locationRow}>
@@ -14,6 +15,8 @@ export function Header() {
           <Ionicons name="chevron-down" size={16} color="#4CAF50" style={styles.icon} />
         </View>
       </View>
+      }
+      
 
       {/* Saudação e imagem do agricultor */}
       <View style={styles.userContainer}>

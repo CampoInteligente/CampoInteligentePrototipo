@@ -80,11 +80,17 @@ export default function WeatherScreen() {
       {/* Footer Stats */}
       <View style={styles.footer}>
         <View style={styles.footerBox}>
-          <Text style={styles.footerTitle}>Índice UV</Text>
+          <View style={{flexDirection: 'row', gap: 6}}>
+            <Ionicons name='sunny-outline' size={16} />
+            <Text style={styles.footerTitle}>Índice UV</Text>
+          </View>
           <Text style={styles.footerValue}>Baixo</Text>
         </View>
         <View style={styles.footerBox}>
-          <Text style={styles.footerTitle}>Umidade</Text>
+          <View style={{flexDirection: 'row', gap: 6}}>
+            <Ionicons name='water-outline' size={16} />
+            <Text style={styles.footerTitle}>Umidade</Text>
+          </View>
           <Text style={styles.footerValue}>81%</Text>
         </View>
       </View>
