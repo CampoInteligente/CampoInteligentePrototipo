@@ -1,15 +1,45 @@
 // app/tabs/home.tsx
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
+import { View, Text, StyleSheet, FlatList, TextInput, Image, TouchableOpacity } from 'react-native';
+import { images } from '../../assets/images';
+import { Ionicons } from '@expo/vector-icons';
+import { Header } from '@/components/Header';
+
+interface Plant {
+  id: string;
+  name: string;
+  image: any;
+}
+
+const DATA: Plant[] = [
+  { id: '1', name: 'Brócolis', image: images.brocolis },
+  { id: '2', name: 'Pepino', image: images.pepino },
+  { id: '3', name: 'Batata', image: images.batata },
+  { id: '4', name: 'Cebola', image: images.cebola },
+  { id: '5', name: 'Alface', image: images.alface },
+];
 
 export default function HomeScreen() {
-  const router = useRouter();
+  const renderItem = ({ item }: {item: Plant}) => (
+    <TouchableOpacity style={styles.card}>
+      <Image source={item.image} style={styles.image} />
+      <Text style={styles.text}>{item.name}</Text>
+    </TouchableOpacity>
+  );
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem-vindo à Home!</Text>
-      <Text style={styles.subtitle}>Tela temporária enquanto você trabalha no resto do app.</Text>
+      <Header />
+      <TextInput style={styles.searchInput} placeholder="Pesquisar" />
+      <Text style={styles.sectionTitle}>Minhas Plantações</Text>
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={styles.list}
+        style={styles.listContainer}
+        scrollEnabled
+      />
     </View>
   );
 }
@@ -17,18 +47,58 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
+    backgroundColor: '#EAF5E3',
+    padding: 16
   },
-  title: {
-    fontSize: 32,
+  location: {
+    fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 20,
+    color: '#333',
   },
-  subtitle: {
-    fontSize: 18,
+  greeting: {
+    fontSize: 14,
     color: '#555',
-    marginBottom: 30,
+  },
+  searchInput: {
+    backgroundColor: '#fff',
+    padding: 12,
+    fontSize: 14,
+    borderRadius: 8,
+    marginBottom: 16,
+    borderWidth: 0,
+    borderColor: '#ccc',
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 12,
+  },
+  listContainer: {
+    backgroundColor: 'white',
+    paddingHorizontal: 17,
+    paddingVertical: 18,
+    flex: 1,
+    borderRadius: 12
+  },
+  list: {
+    paddingBottom: 16,
+  },
+  card: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: '#E8F5E9',
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 12,
+    borderWidth: 0,
+  },
+  image: {
+    marginRight: 16,
+  },
+  text: {
+    fontSize: 32,
+    fontWeight: 'regular',
+    color: '#004809',
   },
 });

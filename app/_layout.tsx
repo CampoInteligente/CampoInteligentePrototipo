@@ -30,6 +30,11 @@ export default function RootLayout() {
           options={{ headerShown: false }}  // Isso vai remover o nome da tela
         />
 
+        <Stack.Screen
+          name="perfil"
+          options={{ headerShown: false }}
+        />
+
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 
       </Stack>

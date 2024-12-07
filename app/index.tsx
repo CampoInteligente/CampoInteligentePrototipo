@@ -15,7 +15,6 @@ export default function Index() {
           <Image 
             source={images.logo}
           />
-          <Text style={styles.logoText}>campo inteligente</Text>
         </View>
         <Text style={styles.description}>Inovação transformando a agricultura.</Text>
         <TouchableOpacity
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
   background: { flex: 1, justifyContent: 'space-between', alignItems: 'center' },
   logoContainer: { marginTop: 100, alignItems: 'center' },
   logoText: { fontSize: 32, fontWeight: 'bold', color: '#fff' },
-  description: { fontSize: 16, color: '#fff', textAlign: 'center', marginHorizontal: 20 },
+  description: { fontSize: 20, color: '#fff', textAlign: 'center', marginHorizontal: 20, width: '80%' },
   button: { backgroundColor: '#fff', borderRadius: 30, paddingVertical: 15, paddingHorizontal: 40, marginBottom: 50 },
   buttonText: { color: '#228B22', fontSize: 18, fontWeight: 'bold' },
 });
