@@ -68,6 +68,8 @@ const styles = StyleSheet.create({
     width: 130,
     height: 130,
     borderRadius: 130,
+    borderWidth: 5, // Largura da borda
+    borderColor: "#FFFFFF", // Cor da borda (branca)
     marginBottom: 22,
   },
   fieldContainer: {
@@ -94,12 +96,11 @@ const styles = StyleSheet.create({
   },
   changePasswordButton: {
     marginTop: 20,
-    borderWidth: 1,
-    borderColor: '#333',
-    borderRadius: 8,
     padding: 10,
   },
   changePasswordText: {
-    color: '#333',
+    color: '#004809',
+    fontSize: 14,
+    fontWeight: "500",
   },
 });

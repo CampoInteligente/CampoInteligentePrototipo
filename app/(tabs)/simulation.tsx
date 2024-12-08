@@ -32,15 +32,16 @@ export default function SimulationScreen() {
         <View style={styles.row}>
           <View style={styles.field}>
             <Text style={styles.label}>Tipo de cultivo:</Text>
-            <Picker
-              selectedValue={cultivo}
-              onValueChange={(itemValue) => setCultivo(itemValue)}
-              style={styles.picker}
-            >
-              <Picker.Item label="Milho" value="Milho" />
-              <Picker.Item label="Soja" value="Soja" />
-              <Picker.Item label="Arroz" value="Arroz" />
-            </Picker>
+            <View style={styles.picker}>
+              <Picker
+                selectedValue={cultivo}
+                onValueChange={(itemValue) => setCultivo(itemValue)}
+              >
+                <Picker.Item label="Milho" value="Milho" />
+                <Picker.Item label="Soja" value="Soja" />
+                <Picker.Item label="Arroz" value="Arroz" />
+              </Picker>
+            </View>
           </View>
           <View style={styles.field}>
             <Text style={styles.label}>Área plantada:</Text>
@@ -56,15 +57,16 @@ export default function SimulationScreen() {
 
         <View style={styles.field2}>
           <Text style={styles.label}>Localização:</Text>
-          <Picker
-            selectedValue={localizacao}
-            onValueChange={(itemValue) => setLocalizacao(itemValue)}
-            style={styles.picker}
-          >
-            <Picker.Item label="Jequié" value="Jequié" />
-            <Picker.Item label="Salvador" value="Salvador" />
-            <Picker.Item label="Ilhéus" value="Ilhéus" />
-          </Picker>
+          <View style={styles.picker}>
+            <Picker
+              selectedValue={localizacao}
+              onValueChange={(itemValue) => setLocalizacao(itemValue)}
+            >
+              <Picker.Item label="Jequié" value="Jequié" />
+              <Picker.Item label="Salvador" value="Salvador" />
+              <Picker.Item label="Ilhéus" value="Ilhéus" />
+            </Picker>
+          </View>
         </View>
 
         <View style={styles.row}>
@@ -101,45 +103,47 @@ export default function SimulationScreen() {
           </View>
           <View style={styles.field}>
             <Text style={styles.label}>Medida:</Text>
-            <Picker
-              selectedValue={medidaAgua}
-              onValueChange={(itemValue) => setMedidaAgua(itemValue)}
-              style={styles.picker}
-            >
-              <Picker.Item label="L" value="L" />
-              <Picker.Item label="m³" value="m³" />
-            </Picker>
+            <View style={styles.picker}>
+              <Picker
+                selectedValue={medidaAgua}
+                onValueChange={(itemValue) => setMedidaAgua(itemValue)}
+              >
+                <Picker.Item label="L" value="L" />
+                <Picker.Item label="m³" value="m³" />
+              </Picker>
+            </View>
           </View>
         </View>
 
         <View style={styles.row}>
           <View style={styles.field}>
             <Text style={styles.label}>Fertilizantes:</Text>
-            <Picker
-              selectedValue={fertilizantes}
-              onValueChange={(itemValue) => setFertilizantes(itemValue)}
-              style={styles.picker}
-            >
-              <Picker.Item label="Sim" value="Sim" />
-              <Picker.Item label="Não" value="Não" />
-            </Picker>
+            <View style={styles.picker}>
+              <Picker
+                selectedValue={fertilizantes}
+                onValueChange={(itemValue) => setFertilizantes(itemValue)}
+              >
+                <Picker.Item label="Sim" value="Sim" />
+                <Picker.Item label="Não" value="Não" />
+              </Picker>
+            </View>
           </View>
           <View style={styles.field}>
             <Text style={styles.label}>Defensivos:</Text>
-            <Picker
-              selectedValue={defensivos}
-              onValueChange={(itemValue) => setDefensivos(itemValue)}
-              style={styles.picker}
-            >
-              <Picker.Item label="Sim" value="Sim" />
-              <Picker.Item label="Não" value="Não" />
-            </Picker>
+            <View style={styles.picker}>
+              <Picker
+                selectedValue={defensivos}
+                onValueChange={(itemValue) => setDefensivos(itemValue)}
+              >
+                <Picker.Item label="Sim" value="Sim" />
+                <Picker.Item label="Não" value="Não" />
+              </Picker>
+            </View>
           </View>
         </View>
 
         <View style={styles.row}>
           <View style={styles.field}>
-            {" "}
             <Text style={styles.label}>Mão de obra:</Text>
             <TextInput
               style={styles.input}
@@ -202,8 +206,6 @@ const styles = StyleSheet.create({
   },
   picker: {
     backgroundColor: "#FFF",
-    borderWidth: 1,
-    borderColor: "#DDD",
     borderRadius: 10,
   },
   button: {
