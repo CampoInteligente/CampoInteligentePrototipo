@@ -6,136 +6,132 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Resultado() {
   return (
-  <View style={styles.container}>
-    <TouchableOpacity 
-        style={styles.backButton}
-        onPress={() => router.back()}  
-    >
-      <Ionicons name='chevron-back' size={28} color={'#004809'} />
-    </TouchableOpacity>
-    <View style={styles.header}>
-      <Header leftBar={false} />
-    </View>
-    <Text style={styles.headerText}>
-      Resultados Simulados
-    </Text>
-    <View style={styles.resultadosRow}>
-      <View style={styles.info}>
-        <Text style={styles.infoText}>
-          Estimativa de produção:
-        </Text>
-
-        <Text style={styles.infoResp}>
-          10 Toneladas
-        </Text>
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+        <Ionicons name="chevron-back" size={28} color={"#004809"} />
+      </TouchableOpacity>
+      <View style={styles.header}>
+        <Header leftBar={false} />
       </View>
+      <Text style={styles.headerText}>Resultados Simulados</Text>
+      <View style={styles.row}>
+        <View style={styles.field}>
+          <Text style={styles.label2}>Est. de produção:</Text>
 
-      <View style={styles.info}>
-        <Text style={styles.infoText}>
-          Lucro:
-        </Text>
+          <Text style={styles.input}>10 Toneladas</Text>
+        </View>
 
-        <Text style={styles.infoResp}>
-          R$ 20.000,00
-        </Text>
+        <View style={styles.field}>
+          <Text style={styles.label}>Lucro:
+          </Text>
+
+          <Text style={styles.input}>R$ 20.000,00</Text>
+        </View>
       </View>
-    </View>
-    <Text style={styles.riscosText}>
-      Análise de riscos:
-    </Text>
-    <View style={styles.analiseRiscosContainer}>
-      <View style={styles.analiseRiscosTextsContainer}>
-        <Text style={styles.infoText}>
-          Risco climático:
-        </Text>
-        <Text style={styles.analiseRiscosRespostas}>
-          Seca no mês de novembro
-        </Text>
-      </View>
-      <View style={styles.analiseRiscosTextsContainer}>
-        <Text style={styles.infoText}>
-          Risco pragas:
-        </Text>
-        <Text style={styles.analiseRiscosRespostas}>
-          Percevejo barriga-verde
-        </Text>
+      <View style={styles.field2}>
+        <Text style={styles.label}>Análise de riscos:</Text>
+        <View style={styles.input}>
+          <View style={styles.analiseRiscosTextsContainer}>
+            <Text style={styles.infoText}>Risco climático:</Text>
+            <Text style={styles.analiseRiscosRespostas}>
+              Seca no mês de novembro
+            </Text>
+          </View>
+          <View style={styles.analiseRiscosTextsContainer}>
+            <Text style={styles.infoText}>Risco pragas:</Text>
+            <Text style={styles.analiseRiscosRespostas}>
+              Percevejo barriga-verde
+            </Text>
+          </View>
+        </View>
       </View>
     </View>
-  </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#E8F5E9',
+    backgroundColor: "#E8F5E9",
     flex: 1,
     paddingTop: 100,
     paddingHorizontal: 20,
-    alignContent: 'center'
+    alignContent: "center",
   },
   header: {
-    position: 'absolute',
+    position: "absolute",
     top: 38,
-    right: 20
+    right: 20,
+  },
+  row: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 15,
+  },
+  field: {
+    flex: 1,
+    marginHorizontal: 5,
+  },
+  field2: {
+    flex: 1,
+    marginHorizontal: 5,
+    marginBottom: 15,
+  },
+  label: {
+    fontSize: 14,
+    fontWeight: "500",
+    color: "#004809",
+    marginBottom: 5,
+  },
+  label2: {
+    fontSize: 14,
+    fontWeight: "500",
+    color: "#004809",
+    marginBottom: 5,
+  },
+  input: {
+    backgroundColor: "white",
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    fontSize: 14,
+    color: "#272A23",
   },
   headerText: {
     fontSize: 20,
-    fontWeight: '500',
-    color: '#004809',
+    fontWeight: "500",
+    color: "#004809",
     marginBottom: 25,
   },
   backButton: {
-    position: 'absolute',
+    position: "absolute",
     top: 50,
     left: 20,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 30,
-    padding: 5
+    padding: 5,
   },
-  resultadosRow: {
-    flexDirection: 'row',
-    gap: 20,
-    flexWrap: 'wrap'
-  },
-  info: {
-    gap: 10
-  },
+
   infoText: {
     fontSize: 14,
-    color: '#004809'
-  },
-  infoResp: {
-    backgroundColor: 'white',
-    paddingVertical: 20,
-    paddingHorizontal: 12,
-    borderRadius: 10,
-    color: '#272A23',
-    fontSize: 14,
-    width: '100%',
-    flexWrap: 'wrap'
-  },
-  riscosText: {
-    fontSize: 14,
-    color: '#004809',
-    alignSelf: 'flex-start',
-    marginTop: 12,
-    marginBlock: 12
+    fontWeight: "500",
+    color: "#004809",
+    marginBottom: 5,
   },
   analiseRiscosContainer: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 15,
     paddingLeft: 20,
     paddingVertical: 15,
-    gap: 10
+    gap: 10,
   },
   analiseRiscosTextsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    width: '100%',
-    gap: 10
+    flexDirection: "row",
+    flexWrap: "wrap",
+    width: "100%",
+    gap: 10,
   },
   analiseRiscosRespostas: {
-    color: '#272A23',
-    fontSize: 14
-  }
+    color: "#272A23",
+    fontSize: 14,
+  },
 });

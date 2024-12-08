@@ -1,5 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import Entypo from '@expo/vector-icons/Entypo';
 import { Tabs } from 'expo-router';
 
 export default function TabLayout() {
@@ -26,7 +27,7 @@ export default function TabLayout() {
         name="simulation"
         options={{
           title: 'Simulações',
-          tabBarIcon: ({ color }) => <Ionicons size={28} name="bar-chart" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="chart-timeline-variant" size={28} color={color} />,
           headerShown: false
         }}
       />
@@ -34,7 +35,7 @@ export default function TabLayout() {
         name="home"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <Ionicons size={28} name="home" color={color} />,
+          tabBarIcon: ({ color }) => <Entypo name="home" size={28} color={color} />,
           headerShown: false,
         }}
       />

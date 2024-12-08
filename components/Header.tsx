@@ -77,5 +77,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20, // Faz com que a imagem fique redonda
+    borderWidth: 3, // Largura da borda
+    borderColor: "#FFFFFF", // Cor da borda (branca)
   },
 })
